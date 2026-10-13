@@ -1,0 +1,592 @@
+:root {
+    /* amethyst */
+    --amethyst:            #9B8EC4;
+    --amethyst-100:        #9B8EC4FF;
+    --amethyst-75:         #9B8EC4BF;
+    --amethyst-50:         #9B8EC480;
+    --amethyst-25:         #9B8EC440;
+
+    --amethyst-deep:       #7D6B9E;
+    --amethyst-deep-100:   #7D6B9EFF;
+    --amethyst-deep-75:    #7D6B9EBF;
+    --amethyst-deep-50:    #7D6B9E80;
+    --amethyst-deep-25:    #7D6B9E40;
+
+    --amethyst-soft:       #B4A9D6;
+    --amethyst-soft-100:   #B4A9D6FF;
+    --amethyst-soft-75:    #B4A9D6BF;
+    --amethyst-soft-50:    #B4A9D680;
+    --amethyst-soft-25:    #B4A9D640;
+
+    /* neutrals */
+    --moon:                #F4F1FA;
+    --moon-100:            #F4F1FAFF;
+    --moon-75:             #F4F1FABF;
+    --moon-50:             #F4F1FA80;
+    --moon-25:             #F4F1FA40;
+
+    --silver:              #C9C3DB;
+    --silver-100:          #C9C3DBFF;
+    --silver-75:           #C9C3DBBF;
+    --silver-50:           #C9C3DB80;
+    --silver-25:           #C9C3DB40;
+
+    --silver-dim:          rgba(201, 195, 219, 0.25);
+
+    /* night tones */
+    --night:               #1E1A2E;
+    --night-100:           #1E1A2EFF;
+    --night-75:            #1E1A2EBF;
+    --night-50:            #1E1A2E80;
+    --night-25:            #1E1A2E40;
+
+    --twilight:            #2E2842;
+    --twilight-100:        #2E2842FF;
+    --twilight-75:         #2E2842BF;
+    --twilight-50:         #2E284280;
+    --twilight-25:         #2E284240;
+
+    --surface:             rgba(30, 26, 46, 0.45);
+
+    /* danger */
+    --danger:              #C48A9C;
+    --danger-100:          #C48A9CFF;
+    --danger-75:           #C48A9CBF;
+    --danger-50:           #C48A9C80;
+    --danger-25:           #C48A9C40;
+
+    --danger-deep:         #9E6E7E;
+    --danger-deep-100:     #9E6E7EFF;
+    --danger-deep-75:      #9E6E7EBF;
+    --danger-deep-50:      #9E6E7E80;
+    --danger-deep-25:      #9E6E7E40;
+
+    --danger-soft:         #D6A9B8;
+    --danger-soft-100:     #D6A9B8FF;
+    --danger-soft-75:      #D6A9B8BF;
+    --danger-soft-50:      #D6A9B880;
+    --danger-soft-25:      #D6A9B840;
+
+    /* look nice */
+    --text:                var(--moon);
+    --text-muted:          var(--silver);
+
+    /* layout */
+    --table-width:         100%;
+    --table-sub-width:     50%;
+    --radius:              12px;
+    --radius-lg:           20px;
+    --shadow:              0 20px 60px rgba(0, 0, 0, 0.4);
+    --glow:                0 0 40px rgba(155, 142, 196, 0.7);
+    --glow-danger:         0 0 40px rgba(196, 138, 156, 0.7);
+
+    /* fade */
+    --fade-max:            400px;
+    --fade-time:           0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: static;
+}
+
+body {
+    min-height: 100vh;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.7;
+    color: var(--text);
+    background: radial-gradient(
+        circle at 70% 20%,
+        var(--amethyst) 0%,
+        var(--amethyst-deep) 25%,
+        var(--twilight) 55%,
+        var(--night) 100%
+    );
+    background-attachment: fixed;
+    padding: 2rem;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 8%;
+    right: 12%;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--moon) 0%, transparent 70%);
+    opacity: 0.55;
+    filter: blur(2px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+/* Amethyst */
+.bg--amethyst            { background-color: var(--amethyst);          color: var(--night); }
+.bg--amethyst-100        { background-color: var(--amethyst-100);      color: var(--night); }
+.bg--amethyst-75         { background-color: var(--amethyst-75);       color: var(--moon); }
+.bg--amethyst-50         { background-color: var(--amethyst-50);       color: var(--moon); }
+.bg--amethyst-25         { background-color: var(--amethyst-25);       color: var(--moon); }
+
+/* Amethyst deep */
+.bg--amethyst-deep       { background-color: var(--amethyst-deep);     color: var(--moon); }
+.bg--amethyst-deep-100   { background-color: var(--amethyst-deep-100); color: var(--moon); }
+.bg--amethyst-deep-75    { background-color: var(--amethyst-deep-75);  color: var(--moon); }
+.bg--amethyst-deep-50    { background-color: var(--amethyst-deep-50);  color: var(--moon); }
+.bg--amethyst-deep-25    { background-color: var(--amethyst-deep-25);  color: var(--moon); }
+
+/* Amethyst soft */
+.bg--amethyst-soft       { background-color: var(--amethyst-soft);     color: var(--night); }
+.bg--amethyst-soft-100   { background-color: var(--amethyst-soft-100); color: var(--night); }
+.bg--amethyst-soft-75    { background-color: var(--amethyst-soft-75);  color: var(--night); }
+.bg--amethyst-soft-50    { background-color: var(--amethyst-soft-50);  color: var(--night); }
+.bg--amethyst-soft-25    { background-color: var(--amethyst-soft-25);  color: var(--moon); }
+
+/* Danger */
+.bg--danger               { background-color: var(--danger);           color: var(--night); }
+.bg--danger-100           { background-color: var(--danger-100);       color: var(--night); }
+.bg--danger-75            { background-color: var(--danger-75);        color: var(--moon); }
+.bg--danger-50            { background-color: var(--danger-50);        color: var(--moon); }
+.bg--danger-25            { background-color: var(--danger-25);        color: var(--moon); }
+
+/* Danger deep */
+.bg--danger-deep          { background-color: var(--danger-deep);      color: var(--moon); }
+.bg--danger-deep-100      { background-color: var(--danger-deep-100);  color: var(--moon); }
+.bg--danger-deep-75       { background-color: var(--danger-deep-75);   color: var(--moon); }
+.bg--danger-deep-50       { background-color: var(--danger-deep-50);   color: var(--moon); }
+.bg--danger-deep-25       { background-color: var(--danger-deep-25);   color: var(--moon); }
+
+/* Danger soft */
+.bg--danger-soft          { background-color: var(--danger-soft);      color: var(--night); }
+.bg--danger-soft-100      { background-color: var(--danger-soft-100);  color: var(--night); }
+.bg--danger-soft-75       { background-color: var(--danger-soft-75);   color: var(--night); }
+.bg--danger-soft-50       { background-color: var(--danger-soft-50);   color: var(--night); }
+.bg--danger-soft-25       { background-color: var(--danger-soft-25);   color: var(--moon); }
+
+/* Moon */
+.bg--moon                 { background-color: var(--moon);             color: var(--night); }
+.bg--moon-100             { background-color: var(--moon-100);         color: var(--night); }
+.bg--moon-75              { background-color: var(--moon-75);          color: var(--night); }
+.bg--moon-50              { background-color: var(--moon-50);          color: var(--night); }
+.bg--moon-25              { background-color: var(--moon-25);          color: var(--night); }
+
+/* Silver */
+.bg--silver               { background-color: var(--silver);           color: var(--night); }
+.bg--silver-100           { background-color: var(--silver-100);       color: var(--night); }
+.bg--silver-75            { background-color: var(--silver-75);        color: var(--night); }
+.bg--silver-50            { background-color: var(--silver-50);        color: var(--night); }
+.bg--silver-25            { background-color: var(--silver-25);        color: var(--moon); }
+
+/* Night */
+.bg--night                { background-color: var(--night);            color: var(--moon); }
+.bg--night-100            { background-color: var(--night-100);        color: var(--moon); }
+.bg--night-75             { background-color: var(--night-75);         color: var(--moon); }
+.bg--night-50             { background-color: var(--night-50);         color: var(--moon); }
+.bg--night-25             { background-color: var(--night-25);         color: var(--moon); }
+
+/* Twilight */
+.bg--twilight             { background-color: var(--twilight);         color: var(--moon); }
+.bg--twilight-100         { background-color: var(--twilight-100);     color: var(--moon); }
+.bg--twilight-75          { background-color: var(--twilight-75);      color: var(--moon); }
+.bg--twilight-50          { background-color: var(--twilight-50);      color: var(--moon); }
+.bg--twilight-25          { background-color: var(--twilight-25);      color: var(--moon); }
+
+.centered {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.card {
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    border: 1px solid var(--silver-dim);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
+}
+
+.card + .card {
+    margin-top: 1.5rem;
+}
+
+button,
+input[type="submit"] {
+    display: inline-block;
+    padding: 0.7rem 1.4rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--silver-dim);
+    background: var(--amethyst);
+    color: var(--night);
+    font: inherit;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background: var(--amethyst-soft);
+    box-shadow: var(--glow);
+    transform: translateY(-1px);
+}
+
+button:active,
+input[type="submit"]:active {
+    transform: translateY(0);
+}
+
+button:focus-visible,
+input[type="submit"]:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--amethyst-soft);
+    outline-offset: 2px;
+}
+
+.btn--ghost {
+    background: transparent;
+    color: var(--text);
+}
+
+.btn--ghost:hover {
+    background: var(--silver-dim);
+    box-shadow: none;
+}
+
+.btn--soft {
+    background: var(--amethyst-soft);
+    color: var(--night);
+}
+
+.btn--soft:hover {
+    background: var(--moon);
+    box-shadow: var(--glow);
+}
+
+.btn--danger {
+    background: var(--danger);
+    color: var(--night);
+}
+
+.btn--danger:hover {
+    background: var(--danger-soft);
+    box-shadow: var(--glow-danger);
+}
+
+.warning {
+    background: var(--danger-25);
+    color: var(--text);
+    border-left: 3px solid var(--danger);
+    border-radius: var(--radius);
+    padding: 0.7rem 1rem;
+}
+
+.warning--soft {
+    background: var(--danger-soft-25);
+    color: var(--text);
+    border-left: 3px solid var(--danger-soft);
+    border-radius: var(--radius);
+    padding: 0.7rem 1rem;
+}
+
+.warning--deep {
+    background: var(--danger-deep-25);
+    color: var(--text);
+    border-left: 3px solid var(--danger-deep);
+    border-radius: var(--radius);
+    padding: 0.7rem 1rem;
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    background: var(--silver-dim);
+    color: var(--text);
+    font-family: 'Courier New', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.divider {
+    height: 1px;
+    border: 0;
+    background: var(--silver-dim);
+    margin: 2rem 0;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: normal;
+    letter-spacing: 0.04em;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.1rem; }
+
+p {
+    color: var(--text-muted);
+    margin: 0 0 1rem;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+a {
+    color: var(--amethyst-soft);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+a:hover {
+    border-bottom-color: var(--amethyst-soft);
+}
+
+code,
+.mono {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    letter-spacing: 0.05em;
+    color: var(--text);
+}
+
+blockquote {
+    border-left: 2px solid var(--amethyst);
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: var(--text);
+    opacity: 0.9;
+}
+
+.swatch {
+    display: block;
+    height: 90px;
+    border-radius: var(--radius);
+    box-shadow: var(--glow);
+}
+
+.swatch--flat {
+    box-shadow: none;
+}
+
+.swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.swatch-grid .swatch {
+    height: 55px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.6rem;
+    color: rgba(30, 26, 46, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.wide > .col-1 { width: 100%; }
+.wide > .col-2 { width: 50%; }
+.wide > .col-3 { width: 33.3%; }
+
+table {
+    width: var(--table-width);
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    width: var(--table-sub-width);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+input:not([type="checkbox"], [type="radio"], [type="submit"]) {
+    width: 100%;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    background-color: var(--night-25);
+    border: 1px solid var(--silver-dim);
+    border-radius: 5px;
+    margin-top: 5px;
+    height: 25px;
+    padding: 0 0.4rem;
+    color: var(--text);
+}
+
+option {
+    background-color: var(--night);
+    color: var(--text);
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.15rem;
+    height: 1.15rem;
+    flex-shrink: 0;
+    border: 1px solid var(--silver-dim);
+    border-radius: 5px;
+    background-color: var(--night-25);
+    cursor: pointer;
+    position: relative;
+    transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    vertical-align: middle;
+}
+
+input[type="checkbox"]:hover {
+    border-color: var(--amethyst-soft);
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--amethyst);
+    border-color: var(--amethyst);
+}
+
+input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    width: 0.3rem;
+    height: 0.6rem;
+    border: solid var(--night);
+    border-width: 0 2px 2px 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+input[type="checkbox"]:focus-visible {
+    outline: 2px solid var(--amethyst-soft);
+    outline-offset: 2px;
+}
+
+input[type="checkbox"]:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+input[type="checkbox"]:checked:disabled {
+    background-color: var(--silver);
+    border-color: var(--silver);
+}
+
+label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.topmargin    { margin-top: 20px; }
+.bottommargin { margin-bottom: 20px; }
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chonk   { font-weight: bold; }
+.unchonk { font-weight: normal; }
+
+.app {
+    background-color: var(--amethyst-deep-25);
+    max-width: 650px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border: 2px solid var(--night);
+    border-radius: 1rem;
+    box-shadow: 10px 10px 5px var(--amethyst-deep);
+}
+
+.fade {
+    overflow: hidden;
+    max-height: var(--fade-max);
+    transition: opacity var(--fade-time) ease,
+                max-height var(--fade-time) ease,
+                visibility var(--fade-time) ease;
+}
+
+.fade.hidden {
+    opacity: 0;
+    max-height: 0;
+    visibility: hidden;
+}
+
+.hidden {
+    visibility: hidden;
+    position: absolute;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--twilight-75), var(--moon-75), var(--night-75));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* fallback */
+}
+
+#nl-badge-frame{
+    display:none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
