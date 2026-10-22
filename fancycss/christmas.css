@@ -1,0 +1,66 @@
+:root {
+    /* Festive Red */
+    --amethyst:            #C0392B;
+    --amethyst-100:        #C0392BFF;
+    --amethyst-75:         #C0392BBF;
+    --amethyst-50:         #C0392B80;
+    --amethyst-25:         #C0392B40;
+    
+    /* Pine Green */
+    --amethyst-deep:       #145A32;
+    --amethyst-deep-100:   #145A32FF;
+    --amethyst-deep-75:    #145A32BF;
+    --amethyst-deep-50:    #145A3280;
+    --amethyst-deep-25:    #145A3240;
+    
+    /* Gold */
+    --amethyst-soft:       #F1C40F;
+    --amethyst-soft-100:   #F1C40FFF;
+    --amethyst-soft-75:    #F1C40FBF;
+    --amethyst-soft-50:    #F1C40F80;
+    --amethyst-soft-25:    #F1C40F40;
+    
+    /* Very Dark Green */
+    --twilight:            #0A1C14;
+    --twilight-100:        #0A1C14FF;
+    --twilight-75:         #0A1C14BF;
+    --twilight-50:         #0A1C1480;
+    --twilight-25:         #0A1C1440;
+    
+    --night:               #05100B;
+    --night-100:           #05100BFF;
+    --night-75:            #05100BBF;
+    --night-50:            #05100B80;
+    --night-25:            #05100B40;
+    
+    --surface:             rgba(10, 28, 20, 0.7);
+    
+    /* Snow White */
+    --moon:                #F4F6F6;
+    --moon-100:            #F4F6F6FF;
+    --moon-75:             #F4F6F6BF;
+    --moon-50:             #F4F6F680;
+    --moon-25:             #F4F6F640;
+
+    /* Red Text */
+    --text:                #C0392B; 
+    --text-muted:          #E74C3C; 
+}
+
+body {
+    background: radial-gradient(circle at 70% 20%, var(--amethyst-deep) 0%, var(--twilight) 50%, var(--night) 100%);
+}
+
+body::before {
+    background: radial-gradient(circle, var(--moon) 0%, transparent 70%);
+    opacity: 0.15;
+    filter: blur(5px);
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #ed321e, #F4F6F6, #145A32);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}

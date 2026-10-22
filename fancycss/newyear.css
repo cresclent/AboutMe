@@ -1,0 +1,72 @@
+:root {
+    /* Gold */
+    --amethyst:            #F1C40F;
+    --amethyst-100:        #F1C40FFF;
+    --amethyst-75:         #F1C40FBF;
+    --amethyst-50:         #F1C40F80;
+    --amethyst-25:         #F1C40F40;
+    
+    --amethyst-deep:       #D4AC0D;
+    --amethyst-deep-100:   #D4AC0DFF;
+    --amethyst-deep-75:    #D4AC0DBF;
+    --amethyst-deep-50:    #D4AC0D80;
+    --amethyst-deep-25:    #D4AC0D40;
+    
+    --amethyst-soft:       #F9E79F;
+    --amethyst-soft-100:   #F9E79FFF;
+    --amethyst-soft-75:    #F9E79FBF;
+    --amethyst-soft-50:    #F9E79F80;
+    --amethyst-soft-25:    #F9E79F40;
+    
+    /* Midnight */
+    --twilight:            #0B0C10;
+    --twilight-100:        #0B0C10FF;
+    --twilight-75:         #0B0C10BF;
+    --twilight-50:         #0B0C1080;
+    --twilight-25:         #0B0C1040;
+    
+    --night:               #000000;
+    --night-100:           #000000FF;
+    --night-75:            #000000BF;
+    --night-50:            #00000080;
+    --night-25:            #00000040;
+    
+    --surface:             rgba(11, 12, 16, 0.7);
+    
+    /* White Moon */
+    --moon:                #FFFFFF;
+    --moon-100:            #FFFFFFFF;
+    --moon-75:             #FFFFFFBF;
+    --moon-50:             #FFFFFF80;
+    --moon-25:             #FFFFFF40;
+}
+
+body {
+    background: radial-gradient(circle at 50% 50%, var(--twilight) 0%, var(--night) 100%);
+}
+body::before { display: none; }
+body::after {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    pointer-events: none;
+    background-image: 
+        radial-gradient(circle at 20% 30%, #F1C40F 2px, transparent 3px),
+        radial-gradient(circle at 80% 60%, #E74C3C 2px, transparent 3px),
+        radial-gradient(circle at 50% 80%, #3498DB 2px, transparent 3px);
+    background-size: 200px 200px;
+    animation: sparkle 2s infinite alternate;
+    opacity: 0.6;
+    z-index: -1;
+}
+@keyframes sparkle {
+    0% { transform: scale(1); opacity: 0.3; }
+    100% { transform: scale(1.1); opacity: 0.8; }
+}
+.gradient-text {
+    background: linear-gradient(90deg, #F9E79F, #F1C40F, #D4AC0D);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}

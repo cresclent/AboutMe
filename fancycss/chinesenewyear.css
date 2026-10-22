@@ -1,0 +1,62 @@
+:root {
+    /* Lantern Red */
+    --amethyst:            #E74C3C;
+    --amethyst-100:        #E74C3CFF;
+    --amethyst-75:         #E74C3CBF;
+    --amethyst-50:         #E74C3C80;
+    --amethyst-25:         #E74C3C40;
+    
+    /* Deep Red */
+    --amethyst-deep:       #922B21;
+    --amethyst-deep-100:   #922B21FF;
+    --amethyst-deep-75:    #922B21BF;
+    --amethyst-deep-50:    #922B2180;
+    --amethyst-deep-25:    #922B2140;
+    
+    /* Gold */
+    --amethyst-soft:       #F1C40F;
+    --amethyst-soft-100:   #F1C40FFF;
+    --amethyst-soft-75:    #F1C40FBF;
+    --amethyst-soft-50:    #F1C40F80;
+    --amethyst-soft-25:    #F1C40F40;
+    
+    /* Dark Night */
+    --twilight:            #2C0703;
+    --twilight-100:        #2C0703FF;
+    --twilight-75:         #2C0703BF;
+    --twilight-50:         #2C070380;
+    --twilight-25:         #2C070340;
+    
+    --night:               #1A0301;
+    --night-100:           #1A0301FF;
+    --night-75:            #1A0301BF;
+    --night-50:            #1A030180;
+    --night-25:            #1A030140;
+    
+    --surface:             rgba(44, 7, 3, 0.7);
+    
+    /* Gold Moon */
+    --moon:                #FFD700;
+    --moon-100:            #FFD700FF;
+    --moon-75:             #FFD700BF;
+    --moon-50:             #FFD70080;
+    --moon-25:             #FFD70040;
+}
+
+body {
+    background: radial-gradient(circle at 70% 20%, var(--amethyst-deep) 0%, var(--twilight) 50%, var(--night) 100%);
+}
+
+body::before {
+    background: radial-gradient(circle, var(--amethyst-soft) 0%, transparent 70%);
+    opacity: 0.25;
+    filter: blur(5px);
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #FFD700, #F1C40F, #E74C3C);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}

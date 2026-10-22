@@ -1,0 +1,61 @@
+:root {
+    /* Orange */
+    --amethyst:            #D35400;
+    --amethyst-100:        #D35400FF;
+    --amethyst-75:         #D35400BF;
+    --amethyst-50:         #D3540080;
+    --amethyst-25:         #D3540040;
+    
+    /* Deep Orange */
+    --amethyst-deep:       #A04000;
+    --amethyst-deep-100:   #A04000FF;
+    --amethyst-deep-75:    #A04000BF;
+    --amethyst-deep-50:    #A0400080;
+    --amethyst-deep-25:    #A0400040;
+    
+    /* Light Orange */
+    --amethyst-soft:       #F39C12;
+    --amethyst-soft-100:   #F39C12FF;
+    --amethyst-soft-75:    #F39C12BF;
+    --amethyst-soft-50:    #F39C1280;
+    --amethyst-soft-25:    #F39C1240;
+    
+    /* Night */
+    --twilight:            #1A0A00;
+    --twilight-100:        #1A0A00FF;
+    --twilight-75:         #1A0A00BF;
+    --twilight-50:         #1A0A0080;
+    --twilight-25:         #1A0A0040;
+    
+    --night:               #0A0500;
+    --night-100:           #0A0500FF;
+    --night-75:            #0A0500BF;
+    --night-50:            #0A050080;
+    --night-25:            #0A050040;
+    
+    --surface:             rgba(10, 5, 0, 0.65);
+    
+    /* Blood Moon */
+    --moon:                #FF5555;
+    --moon-100:            #FF5555FF;
+    --moon-75:             #FF5555BF;
+    --moon-50:             #FF555580;
+    --moon-25:             #FF555540;
+}
+
+body {
+    background: radial-gradient(circle at 70% 20%, var(--amethyst-deep) 0%, var(--twilight) 50%, var(--night) 100%);
+}
+
+body::before {
+    background: radial-gradient(circle, var(--amethyst-soft) 0%, transparent 70%);
+    opacity: 0.2;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #FF5555, #F39C12, #D35400);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
