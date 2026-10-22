@@ -1,4 +1,4 @@
-  const birthDate = new Date("2006-08-06");
+  const birthDate = new Date("2005-08-06");
   const today = new Date();
 
   let age = today.getFullYear() - birthDate.getFullYear();
