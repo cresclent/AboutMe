@@ -1,0 +1,58 @@
+:root {
+    --amethyst:            #9B8EC4;
+    --amethyst-100:        #9B8EC4FF;
+    --amethyst-75:         #9B8EC4BF;
+    --amethyst-50:         #9B8EC480;
+    --amethyst-25:         #9B8EC440;
+    
+    --amethyst-deep:       #7D6B9E;
+    --amethyst-deep-100:   #7D6B9EFF;
+    --amethyst-deep-75:    #7D6B9EBF;
+    --amethyst-deep-50:    #7D6B9E80;
+    --amethyst-deep-25:    #7D6B9E40;
+    
+    --amethyst-soft:       #B4A9D6;
+    --amethyst-soft-100:   #B4A9D6FF;
+    --amethyst-soft-75:    #B4A9D6BF;
+    --amethyst-soft-50:    #B4A9D680;
+    --amethyst-soft-25:    #B4A9D640;
+    
+    --twilight:            #1E1A2E;
+    --twilight-100:        #1E1A2EFF;
+    --twilight-75:         #1E1A2EBF;
+    --twilight-50:         #1E1A2E80;
+    --twilight-25:         #1E1A2E40;
+    
+    --night:               #0A0512;
+    --night-100:           #0A0512FF;
+    --night-75:            #0A0512BF;
+    --night-50:            #0A051280;
+    --night-25:            #0A051240;
+    
+    --surface:             rgba(30, 26, 46, 0.65);
+    
+    --moon:                #FFFFFF;
+    --moon-100:            #FFFFFFFF;
+    --moon-75:             #FFFFFFBF;
+    --moon-50:             #FFFFFF80;
+    --moon-25:             #FFFFFF40;
+    
+    --text:                #B4A9D6;
+    --text-muted:          #D3CAE8;
+}
+
+body {
+    background: radial-gradient(circle at 70% 20%, var(--amethyst-deep) 0%, var(--twilight) 50%, var(--night) 100%);
+}
+body::before {
+    background: radial-gradient(circle, var(--amethyst) 0%, transparent 70%);
+    opacity: 0.25;
+    filter: blur(5px);
+}
+.gradient-text {
+    background: linear-gradient(90deg, #B4A9D6, #FFFFFF, #7D6B9E);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
