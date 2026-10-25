@@ -580,10 +580,6 @@ label {
   color: transparent; /* fallback */
 }
 
-#nl-badge-frame{
-    display:none;
-}
-
 @media (prefers-reduced-motion: reduce) {
     * {
         transition: none !important;
